@@ -41,7 +41,9 @@ class PriorityResponse(BaseModel):
     method: Literal["HARD_RULE", "LLM"]
 
 
-
+@app.get("/health")
+def health_check():
+    return {"status": "PashuCare AI API is running"}
 
 
 
