@@ -37,7 +37,9 @@ class IncidentResponse(BaseModel):
     duplicate: bool
 
 
-
+@app.get("/health")
+def health_check():
+    return {"status": "PashuCare AI API is running"}
 
 
 @app.post("/incident", response_model=IncidentResponse)
