@@ -24,6 +24,9 @@ app = FastAPI(
     version="1.0"
 )
 
+@app.get("/health")
+def health_check():
+    return {"status": "PashuCare AI API is running"}
 
 @app.post("/deduplicate-image", response_model=DeduplicationResponse)
 def deduplicate_image(request: DeduplicationRequest):
